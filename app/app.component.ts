@@ -4,11 +4,11 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template: `
   <div class="container">
+    <h1>Kombucha Boyz</h1>
     <div class="row">
-      <div class="col-md-6"></div>
+      <div class="col-md-6"><customer></customer></div>
       <div class="col-md-6"><employee></employee></div>
     </div>
-    <h1>Kombucha Boyz</h1>
 
   </div>
   `
