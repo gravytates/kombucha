@@ -17,8 +17,8 @@ import { Keg } from './keg.model';
 
 export class AppComponent {
   masterKegList: Keg[] = [
-    new Keg('Citrus Hops', 'Brew Dr.', 5, 'notes citrus and hops'),
-    new Keg('Clear Mind', 'Brew Dr.', 5, 'notes of rosemary and sage'),
+    new Keg('Clear Mind', 'Brew Dr.', 3, 'notes of rosemary and sage'),
+    new Keg('Citrus Hops', 'Kombucha Times.', 6, 'notes citrus and hops'),
     new Keg('Ginger Turmeric', 'Brew Dr.', 5, 'notes of ginger and turmeric')
   ];
 }
