@@ -8,19 +8,37 @@ import { Keg } from './keg.model';
   <hr>
   <add-keg (addNewKeg)="addKeg($event)"></add-keg>
   <hr>
-  <p *ngFor='let currentKeg of childKegList'>
-    {{currentKeg.name}}, {{currentKeg.brand}} <button class='btn btn-success' (click)="sellPint(currentKeg)">Sell Pint</button>Pints: {{currentKeg.pints}}
-  </p>
+  <div class="row">
+    <div class="col-md-6">
+      <div *ngFor='let currentKeg of childKegList'>
+        <p>{{currentKeg.name}}, {{currentKeg.brand}} Pints: {{currentKeg.pints}}</p>
+        <button class="btn btn-default" (click)="editKeg(currentKeg)">Edit Keg</button> <button class='btn btn-success' (click)="sellPint(currentKeg)">Sell Pint</button>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div *ngIf="selectedKeg">
+        <edit-keg [selectedKeg]="selectedKeg" (finishedEditingSender)="finishedEditing()"></edit-keg>
+      </div>
+    </div>
   `
 })
 
 export class EmployeeComponent {
   @Input() childKegList: Keg[];
   @Output() newKegSender = new EventEmitter();
+  selectedKeg = null;
 
   addKeg(newKeg){
     this.childKegList.push(newKeg);
     this.newKegSender.emit(this.childKegList);
+  }
+
+  editKeg(keg){
+    this.selectedKeg = keg;
+  }
+
+  finishedEditing(){
+    this.selectedKeg = null;
   }
 
   sellPint(keg) {
