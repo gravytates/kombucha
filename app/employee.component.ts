@@ -9,7 +9,7 @@ import { Keg } from './keg.model';
   <add-keg (addNewKeg)="addKeg($event)"></add-keg>
   <hr>
   <p *ngFor='let currentKeg of childKegList'>
-    {{currentKeg.name}}, {{currentKeg.brand}} Pints: {{currentKeg.pints}}
+    {{currentKeg.name}}, {{currentKeg.brand}} <button class='btn btn-success' (click)="sellPint(currentKeg)">Sell Pint</button>Pints: {{currentKeg.pints}}
   </p>
   `
 })
@@ -20,6 +20,11 @@ export class EmployeeComponent {
 
   addKeg(newKeg){
     this.childKegList.push(newKeg);
+    this.newKegSender.emit(this.childKegList);
+  }
+
+  sellPint(keg) {
+    keg.pints -= 1;
     this.newKegSender.emit(this.childKegList);
   }
 }
