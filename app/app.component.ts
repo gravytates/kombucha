@@ -5,7 +5,7 @@ import { Keg } from './keg.model';
   selector: 'app-root',
   template: `
   <div class="container-fluid">
-    <h1>Kombucha Boyz</h1>
+    <h1>Kom<em>boooo</em>cha!</h1>
     <div class="row">
       <div class="col-md-6"><customer [childKegList]="masterKegList"></customer></div>
       <div class="col-md-6"><employee [childKegList]="masterKegList"></employee></div>

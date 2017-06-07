@@ -6,10 +6,11 @@ import { EmployeeComponent } from './employee.component';
 import { CustomerComponent } from './customer.component';
 import { AddKegComponent } from './add-keg.component';
 import { EditKegComponent } from './edit-keg.component';
+import { StockPipe } from './stock.pipe';
 
 @NgModule({
   imports: [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, EmployeeComponent, CustomerComponent, AddKegComponent, EditKegComponent ],
+  declarations: [ AppComponent, EmployeeComponent, CustomerComponent, AddKegComponent, EditKegComponent, StockPipe ],
   bootstrap: [ AppComponent ]
 })
 
